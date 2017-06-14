@@ -32,6 +32,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+         loader: 'file-loader'
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
             use: 'css-loader'
@@ -41,6 +45,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('bundle.css'),
   ]
 }

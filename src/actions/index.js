@@ -1,18 +1,16 @@
 const API_KEY = 'd74df1ffd99a7afbff694c2a0c41530c';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
 
-const url = `${ROOT_URL}&q=london,us`;
 
-export default function fetchWeather() {
+export const fetchWeather = (latitude, longitude) => {
+const url = `${ROOT_URL}&lat=${latitude}&lon=${longitude}`;
 	return dispatch => {
 	dispatch(fetchWeatherRequest());
+
 	fetch(url)
-		.then((response) => {
-			dispatch(fetchWeatherSuccess(response));
-		})
-		.catch((error) => {
-			dispatch(fetchWeatherError(error))
-		})
+		.then((response) => response.json())
+		.then((weather) => dispatch(fetchWeatherSuccess(weather)))
+		.catch((error) => dispatch(fetchWeatherError("error loading"))) //eslint-disable-line
 	}
 }
 
@@ -22,10 +20,10 @@ function fetchWeatherRequest() {
 	}
 }
 
-function fetchWeatherSuccess(response) {
+function fetchWeatherSuccess(weather) {
 	return {
 		type: 'FETCH_WEATHER_SUCCESS',
-		payload: response
+		payload: weather
 	}
 }
 

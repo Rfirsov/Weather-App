@@ -1,0 +1,66 @@
+@import "reset.css";
+
+
+/*---- fonts------ */
+
+@font-face {
+    font-family: "BebasNeue-Light";
+    src: url("./fonts/BebasNeue Light.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "BebasNeue-Book";
+    src: url("./fonts/BebasNeue Book.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "BebasNeue-Bold";
+    src: url("./fonts/BebasNeue Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/Roboto-Light.ttf');
+    font-weight: 200;
+}
+
+
+
+/* App */
+
+html {
+  min-height: 100%;
+  font: 50px "BebasNeue-Light";
+  color: #fff;
+  background: linear-gradient(to bottom, #00728c, #3ec9bf) no-repeat;
+}
+
+.header {
+  margin-top: 20px;
+  text-align: center;
+} 
+
+.weather-container {
+  margin-top: 4%;
+  margin-left: 10%;
+  padding-left: 1%;
+  width: 75%;
+  border-radius: 5px;
+  background: #48a1b2;
+  background-image: repeating-radial-gradient(ellipse farthest-side at right bottom, #3faebb);
+}
+
+.city-name {
+   font: 700 1.3em/1.4em "BebasNeue-Bold";
+}
+
+.weekday {
+  font: 300 0.8em/1.3em "BebasNeue-Book";
+}
+
+.daynow {
+  font: 300 0.56em/1.2em "BebasNeue-Book";
+}

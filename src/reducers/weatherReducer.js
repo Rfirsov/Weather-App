@@ -9,7 +9,7 @@ const weatherReducer = (state = initialState, action) => {
 		case 'FETCH_WEATHER_REQUEST': 
 			return { 
 				...state, 
-				fetching: true 
+				fetching: true
 			};
 		case 'FETCH_WEATHER_SUCCESS':
 			return { 
@@ -21,7 +21,7 @@ const weatherReducer = (state = initialState, action) => {
 			return { 
 				...state, 
 				fetching: false,
-				weather: action.payload 
+				error: action.payload
 			};
 	default:
 		return state;
