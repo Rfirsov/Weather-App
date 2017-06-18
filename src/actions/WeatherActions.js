@@ -1,12 +1,11 @@
-const API_KEY = 'd74df1ffd99a7afbff694c2a0c41530c';
+const API_KEY = '7f78e7bb16b1e3d99d7d42da1680842c';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
 
 
 export const fetchWeather = (latitude, longitude) => {
 const url = `${ROOT_URL}&lat=${latitude}&lon=${longitude}`;
 	return dispatch => {
-	dispatch(fetchWeatherRequest());
-
+		dispatch(fetchWeatherRequest());
 	fetch(url)
 		.then((response) => response.json())
 		.then((weather) => dispatch(fetchWeatherSuccess(weather)))
@@ -16,7 +15,7 @@ const url = `${ROOT_URL}&lat=${latitude}&lon=${longitude}`;
 
 function fetchWeatherRequest() {
 	return {
-		type: 'FETCH_WEATHER_REQUEST'
+		type: 'FETCH_WEATHER_REQUEST',
 	}
 }
 
@@ -29,7 +28,7 @@ function fetchWeatherSuccess(weather) {
 
 function fetchWeatherError(error) {
 	return {
-		type: 'FETCH_WEATHER_ERROR',
+		type: 'FETCH_WEATHER_FAILURE',
 		payload: error
 	}
 }

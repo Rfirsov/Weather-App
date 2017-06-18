@@ -1,5 +1,5 @@
 @import "reset.css";
-
+@import "owfont-regular.css";
 
 /*---- fonts------ */
 
@@ -41,13 +41,19 @@ html {
 .header {
   margin-top: 20px;
   text-align: center;
+}
+
+.loading {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
 } 
 
 .weather-container {
-  margin-top: 4%;
-  margin-left: 10%;
+  margin: 3% 15% 0%;
+  padding-bottom: 2%;
   padding-left: 1%;
-  width: 75%;
+  width: 70%;
   border-radius: 5px;
   background: #48a1b2;
   background-image: repeating-radial-gradient(ellipse farthest-side at right bottom, #3faebb);
@@ -57,10 +63,66 @@ html {
    font: 700 1.3em/1.4em "BebasNeue-Bold";
 }
 
+.daytime {
+  flex: 1 1;
+  line-height: 0.5em;
+}
+
 .weekday {
-  font: 300 0.8em/1.3em "BebasNeue-Book";
+  font: 300 0.8em "BebasNeue-Book";
 }
 
 .daynow {
-  font: 300 0.56em/1.2em "BebasNeue-Book";
+  font: 300 0.56em "BebasNeue-Book";
+}
+
+.windspeed {
+  flex: 1 1;
+  font: 200 0.28em/1.8em "Roboto-Light";
+}
+
+.humidity {
+  flex: 1 1;
+  font: 200 0.45em/0.8em "Roboto-Light";
+}
+
+.temp {
+  text-align: center;
+  font: 700 2em "BebasNeue-Bold";
+}
+
+.description {
+  font: 300 0.85em "BebasNeue-Book";
+}
+
+.weather-items {
+  display: flex;
+}
+
+.weather-item1 {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.weather-item2 {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.weather-item3 {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+  .weather-container {
+    width: 90%;
+    margin: 3% 5% 0%;
+  }
 }

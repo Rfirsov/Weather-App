@@ -34,13 +34,15 @@ class App extends React.Component {
   componentWillMount() {
     this.getLocation();  
   }
+
+
   render() {
 		let weatherList;
-		if(this.state.latitude != '' && this.state.longitude != '') {
-			weatherList = <WeatherList latitude={this.state.latitude} longitude={this.state.longitude} />
+		if (this.state.latitude !== '' &&  this.state.longitude !== '') {
+		weatherList	= <WeatherList latitude={this.state.latitude} longitude={this.state.longitude} />
 		} else {
-			weatherList = null
-			}
+		weatherList = null;
+		}
     return (
       <div>
 				<Header />
@@ -48,6 +50,7 @@ class App extends React.Component {
       </div>
     );
   }
-} 
+}
+
 
 export default App;
