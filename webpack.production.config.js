@@ -1,13 +1,25 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const srcDir = path.resolve(__dirname, 'src')
+const distDir = path.resolve(__dirname, 'dist')
 
 module.exports = {
-  entry: "./src/index.js",
+  context: srcDir,
+  entry: "./index.js",
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: distDir,
     publicPath: '/',
     filename: 'bundle.js'
+  },
+   devServer: {
+    contentBase: distDir,
+    historyApiFallback: true,
+    port: 3000,
+    compress: true,
+    inline: false
   },
   module: {
     rules: [
