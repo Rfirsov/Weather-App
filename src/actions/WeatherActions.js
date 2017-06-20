@@ -1,5 +1,5 @@
 const API_KEY = '7f78e7bb16b1e3d99d7d42da1680842c';
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
+const ROOT_URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
 
 
 export const fetchWeather = (latitude, longitude) => {

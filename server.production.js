@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require('express');
 var app = express();
 
@@ -7,8 +8,8 @@ app.use(express.static(__dirname + '/dist'));
 
 app.set(__dirname + '/index.html');
 
-app.get('/', function(request, response) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+app.get('*', function (req, res) {
+  res.sendFile('index.html');
 });
 
 app.listen(app.get('port'), function() {
